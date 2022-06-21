@@ -43,8 +43,9 @@ class Database:
 
     def query_one(self, request, params=None):
         self.cursor.execute(request, params or ())
-        return print(self.fetchone())
+        return self.fetchone()
 
     def query_all(self, request, params=None):
         self.cursor.execute(request, params or ())
-        return print(*[row for row in self.fetchall()], sep='\n')
+        return self.fetchall()
+
